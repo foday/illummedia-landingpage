@@ -1,5 +1,5 @@
 {
-  "name": "illummedia-free-site",
+  "name": "illummedia-landingpage",
   "type": "module",
   "version": "1.0.0",
   "scripts": { "dev": "astro dev", "build": "astro build", "preview": "astro preview" },
