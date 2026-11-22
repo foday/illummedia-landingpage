@@ -1,1 +1,478 @@
 
+---
+const roles = [
+  {
+    icon: "▦",
+    title: "Business Owner",
+    description: "Find partners, suppliers, creators, and talent to grow your business."
+  },
+  {
+    icon: "▶",
+    title: "Creator",
+    description: "Collaborate with businesses, suppliers, and other creators to create, produce, and grow."
+  },
+  {
+    icon: "◇",
+    title: "Supplier",
+    description: "Showcase your products and services, connect with qualified businesses, and build long-term partnerships."
+  },
+  {
+    icon: "♧",
+    title: "Other Professional",
+    description: "Bring your skills, services, or expertise to the network and collaborate on projects that create value."
+  }
+];
+
+const steps = [
+  { number: "01", title: "Discover complementary people.", description: "Find businesses, creators, suppliers, and professionals with what you need." },
+  { number: "02", title: "Connect around shared needs.", description: "Discuss ideas, explore opportunities, and align on goals." },
+  { number: "03", title: "Build projects and strategic alliances.", description: "Turn ideas into action with clear roles, decisions, and next steps." }
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Connect with businesses, creators, suppliers, and independent professionals through Illummedia." />
+    <title>Collaborate | Illummedia</title>
+    <style>
+      :root {
+        --bg: #1b1d14;
+        --panel: #191b1b;
+        --panel-soft: #202218;
+        --yellow: #ffdf00;
+        --white: #f3f1ed;
+        --muted: #b5b1a6;
+        --border: #41433b;
+      }
+
+      * { box-sizing: border-box; }
+
+      html { scroll-behavior: smooth; }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--white);
+        font-family: Inter, Arial, sans-serif;
+      }
+
+      a { color: inherit; text-decoration: none; }
+
+      .container {
+        width: min(1320px, calc(100% - 64px));
+        margin: auto;
+      }
+
+      header {
+        height: 82px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 28px;
+      }
+
+      .logo {
+        font-size: 27px;
+        font-weight: 850;
+        letter-spacing: -1.5px;
+        white-space: nowrap;
+      }
+
+      .logo span { color: var(--yellow); }
+
+      nav {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        font-size: 14px;
+        color: #dedbd4;
+      }
+
+      nav a { padding: 12px 0; }
+
+      nav a.active {
+        color: white;
+        border-bottom: 3px solid var(--yellow);
+      }
+
+      .account {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+      }
+
+      .login, .signup, .primary, .secondary {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        border-radius: 999px;
+        padding: 13px 22px;
+        font-weight: 750;
+        font-size: 14px;
+        white-space: nowrap;
+      }
+
+      .login, .secondary {
+        border: 1px solid #aaa493;
+        color: white;
+        background: transparent;
+      }
+
+      .signup, .primary {
+        background: var(--yellow);
+        color: #111;
+        border: 1px solid var(--yellow);
+      }
+
+      .hero {
+        min-height: 410px;
+        display: grid;
+        grid-template-columns: 1fr 1.05fr;
+        align-items: center;
+        gap: 30px;
+        padding: 36px 0 48px;
+        border-bottom: 1px solid rgba(255,223,0,.2);
+      }
+
+      .eyebrow {
+        color: var(--yellow);
+        font-size: 13px;
+        font-weight: 850;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        font-size: clamp(42px, 5vw, 68px);
+        line-height: .99;
+        letter-spacing: -3px;
+        margin: 16px 0;
+        max-width: 650px;
+      }
+
+      h1 span, h2 span { color: var(--yellow); }
+
+      .hero-copy {
+        color: #d0ccc3;
+        font-size: 18px;
+        line-height: 1.65;
+        max-width: 590px;
+      }
+
+      .hero-actions {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+        margin-top: 25px;
+      }
+
+      .network {
+        min-height: 330px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        align-items: center;
+        justify-items: center;
+        gap: 0;
+        position: relative;
+        isolation: isolate;
+      }
+
+      .network:before {
+        content: "";
+        position: absolute;
+        inset: 8%;
+        background:
+          radial-gradient(circle, rgba(255,210,0,.25), transparent 65%);
+        z-index: -1;
+      }
+
+      .hex {
+        width: 165px;
+        height: 145px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 9px;
+        text-align: center;
+        background: #11140f;
+        border: 2px solid var(--yellow);
+        color: white;
+        clip-path: polygon(25% 3%,75% 3%,100% 50%,75% 97%,25% 97%,0 50%);
+        filter: drop-shadow(0 0 10px rgba(255,223,0,.5));
+        font-weight: 750;
+        font-size: 16px;
+      }
+
+      .hex .symbol {
+        font-size: 30px;
+        color: var(--yellow);
+      }
+
+      .hex.business { grid-column: 1; grid-row: 1 / 3; }
+      .hex.creator { grid-column: 3; grid-row: 1 / 3; }
+      .hex.supplier { grid-column: 1; grid-row: 3; }
+      .hex.other { grid-column: 3; grid-row: 3; }
+
+      .hex.center {
+        grid-column: 2;
+        grid-row: 2;
+        width: 185px;
+        height: 165px;
+        background: linear-gradient(145deg, #ffe84b, #e8b900);
+        color: #111;
+        border: 2px solid #fff0a0;
+        font-size: 24px;
+        letter-spacing: -1px;
+        z-index: 2;
+        box-shadow: 0 0 35px rgba(255,213,0,.6);
+      }
+
+      .section { padding: 46px 0; }
+
+      h2 {
+        font-size: clamp(30px, 3.5vw, 43px);
+        line-height: 1.1;
+        letter-spacing: -1.5px;
+        margin: 10px 0;
+      }
+
+      .section-intro {
+        color: var(--muted);
+        line-height: 1.7;
+        margin: 12px 0 28px;
+        max-width: 720px;
+      }
+
+      .role-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+      }
+
+      .role-card {
+        min-height: 225px;
+        padding: 24px;
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .role-icon {
+        width: 48px;
+        height: 48px;
+        display: grid;
+        place-items: center;
+        border-radius: 13px;
+        background: #514500;
+        color: var(--yellow);
+        font-size: 25px;
+      }
+
+      .role-card h3 {
+        font-size: 20px;
+        margin: 20px 0 8px;
+      }
+
+      .role-card p {
+        color: var(--muted);
+        line-height: 1.55;
+        font-size: 14px;
+        margin: 0 0 20px;
+      }
+
+      .explore {
+        color: var(--yellow);
+        font-weight: 750;
+        margin-top: auto;
+      }
+
+      .steps {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+        margin-top: 28px;
+      }
+
+      .step {
+        display: flex;
+        gap: 18px;
+        padding: 24px;
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        background: var(--panel);
+      }
+
+      .step-number {
+        flex: 0 0 44px;
+        width: 44px;
+        height: 44px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        background: var(--yellow);
+        color: #111;
+        font-size: 17px;
+        font-weight: 850;
+      }
+
+      .step h3 { margin: 2px 0 8px; font-size: 18px; }
+      .step p { margin: 0; color: var(--muted); line-height: 1.5; font-size: 14px; }
+
+      .closing {
+        margin: 12px 0 65px;
+        padding: 28px 32px;
+        border: 1px solid var(--yellow);
+        border-radius: 22px;
+        background: linear-gradient(100deg, #222318, #171910);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+      }
+
+      .closing h2 { margin: 0; }
+      .closing p { color: var(--muted); line-height: 1.5; margin-bottom: 0; }
+      footer { border-top: 1px solid var(--border); padding: 25px 0; color: var(--muted); font-size: 13px; }
+
+      @media (max-width: 950px) {
+        nav { gap: 14px; }
+        .hero { grid-template-columns: 1fr; }
+        .network { max-width: 650px; width: 100%; margin: auto; }
+        .role-grid { grid-template-columns: repeat(2, 1fr); }
+      }
+
+      @media (max-width: 680px) {
+        .container { width: min(100% - 36px, 520px); }
+        header { height: auto; padding: 20px 0; flex-wrap: wrap; }
+        nav { order: 3; width: 100%; overflow-x: auto; gap: 22px; }
+        nav a { white-space: nowrap; }
+        .logo { font-size: 24px; }
+        .login, .signup { padding: 10px 14px; font-size: 12px; }
+        .hero { padding-top: 30px; }
+        h1 { letter-spacing: -2px; }
+        .hero-copy { font-size: 16px; }
+        .network { min-height: 260px; transform: scale(.86); margin: -15px auto; width: 115%; margin-left: -7.5%; }
+        .hex { width: 125px; height: 112px; font-size: 13px; }
+        .hex.center { width: 140px; height: 128px; font-size: 19px; }
+        .role-grid, .steps { grid-template-columns: 1fr; }
+        .role-card { min-height: 190px; }
+        .closing { align-items: flex-start; flex-direction: column; padding: 24px; }
+        .hero-actions a { flex: 1; }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+        <a class="logo" href="/"><span>I</span>llummedia</a>
+
+        <nav aria-label="Main navigation">
+          <a href="/">Home</a>
+          <a href="/creators/">Creators</a>
+          <a href="/businesses/">Businesses</a>
+          <a href="/suppliers/">Suppliers</a>
+          <a class="active" href="/collaborators/">Collaborators</a>
+          <a href="/#portfolio">Portfolio</a>
+        </nav>
+
+        <div class="account">
+          <a class="login" href="/login">Log In</a>
+          <a class="signup" href="/signup">Sign Up</a>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div>
+            <div class="eyebrow">Collaboration Network</div>
+            <h1>Bring the right people <span>together.</span></h1>
+            <p class="hero-copy">
+              Illummedia connects businesses, creators, suppliers, and independent
+              professionals to discover complementary capabilities and build
+              strategic collaborations.
+            </p>
+            <div class="hero-actions">
+              <a class="primary" href="#join">Start a collaboration <span>→</span></a>
+              <a class="secondary" href="#how-it-works">▷ &nbsp; See how it works</a>
+            </div>
+          </div>
+
+          <div class="network" aria-label="Illummedia collaboration network">
+            <div class="hex business"><span class="symbol">▦</span>Businesses</div>
+            <div class="hex creator"><span class="symbol">▶</span>Creators</div>
+            <div class="hex supplier"><span class="symbol">◇</span>Suppliers</div>
+            <div class="hex other"><span class="symbol">♧</span>Other<br />Professionals</div>
+            <div class="hex center">Illummedia</div>
+          </div>
+        </section>
+
+        <section class="section" id="join">
+          <div class="eyebrow">One ecosystem · Many ways to connect</div>
+          <h2>Find your place in the <span>network.</span></h2>
+          <p class="section-intro">
+            Join as a business, creator, supplier, or independent professional
+            and collaborate on real opportunities.
+          </p>
+
+          <div class="role-grid">
+            {roles.map((role) => (
+              <article class="role-card">
+                <div class="role-icon">{role.icon}</div>
+                <h3>{role.title}</h3>
+                <p>{role.description}</p>
+                <a class="explore" href="/signup">Explore&nbsp; →</a>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section class="section" id="how-it-works">
+          <div class="eyebrow">From discovery to shared progress</div>
+          <h2>How collaboration <span>works.</span></h2>
+          <p class="section-intro">
+            A simple, practical way to find the right people, align on goals,
+            and build together.
+          </p>
+
+          <div class="steps">
+            {steps.map((step) => (
+              <article class="step">
+                <div class="step-number">{step.number}</div>
+                <div>
+                  <h3>{step.title}</h3>
+                  <p>{step.description}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section class="closing">
+          <div>
+            <h2>Have a <span>project</span> in mind?</h2>
+            <p>Bring the right people, resources, and capabilities together to move your idea, business, or operation forward.</p>
+          </div>
+          <div class="hero-actions">
+            <a class="primary" href="/signup">Start a collaboration →</a>
+            <a class="secondary" href="#how-it-works">▷ &nbsp; See how it works</a>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        © {new Date().getFullYear()} Illummedia. All rights reserved.
+      </footer>
+    </div>
+  </body>
+</html>
+
