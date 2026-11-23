@@ -1,1 +1,874 @@
 
+---
+const checks = [
+  {
+    icon: "⌕",
+    title: "SEO visibility",
+    description: "Page structure, titles, content clarity, and technical signals that affect search discovery."
+  },
+  {
+    icon: "▱",
+    title: "GEO readiness",
+    description: "How clearly your business is represented for AI discovery across today's leading platforms."
+  },
+  {
+    icon: "▥",
+    title: "Actionable recommendations",
+    description: "Practical improvements with clear next steps and supporting source references."
+  }
+];
+
+const steps = [
+  {
+    number: "1",
+    title: "Add public links",
+    description: "Enter your website and optional channels."
+  },
+  {
+    number: "2",
+    title: "Review your analysis",
+    description: "See your SEO and GEO results with key insights and recommendations."
+  },
+  {
+    number: "3",
+    title: "Save your report",
+    description: "Keep a copy of your results and next steps in your Illummedia account."
+  }
+];
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Improve your business visibility across search engines and AI discovery with Illummedia's SEO and GEO Analyzer." />
+  <title>Business Visibility | Illummedia</title>
+</head>
+
+<body>
+  <header class="site-header">
+    <a href="/" class="logo" aria-label="Illummedia home">
+      <span class="logo-illum">I</span>llummedia
+    </a>
+
+    <nav class="main-nav">
+      <a href="/businesses/" class="active">Businesses</a>
+      <a href="/creators/">Creators</a>
+      <a href="/suppliers/">Suppliers</a>
+      <a href="/collaborators/">Collaborators</a>
+      <a href="/#portfolio">Portfolio</a>
+    </nav>
+
+    <div class="header-actions">
+      <a href="/login/" class="login-button">Log In</a>
+      <a href="/signup/" class="signup-button">Sign Up</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">BUSINESS VISIBILITY</span>
+
+        <h1>
+          See how your business<br />
+          shows up <span>online.</span>
+        </h1>
+
+        <p>
+          Illummedia reviews your business's public online presence across
+          search and AI discovery, and provides practical, evidence-based
+          recommendations to help you get found by more customers,
+          partners, and opportunities.
+        </p>
+      </div>
+
+      <div class="hero-visual" aria-label="Business visibility illustration">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="orbit orbit-three"></div>
+
+        <div class="business-symbol">▦</div>
+
+        <div class="floating-card seo-card">
+          <strong>SEO</strong>
+          <span>Search visibility</span>
+        </div>
+
+        <div class="floating-card geo-card">
+          <strong>GEO</strong>
+          <span>AI discovery</span>
+        </div>
+
+        <div class="floating-card growth-card">
+          <strong>Growth</strong>
+          <span>More opportunities</span>
+        </div>
+
+        <div class="floating-card insights-card">
+          <strong>Insights</strong>
+          <span>Actionable steps</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="analyzer" id="analyzer">
+      <h2>SEO + GEO <span>ANALYZER</span></h2>
+      <p class="analyzer-intro">
+        Start with your website. Add the channels your business uses.
+      </p>
+
+      <form id="analyzer-form">
+        <div class="field-group website-field">
+          <div class="field-icon">◎</div>
+          <div class="field-content">
+            <label for="website">
+              Website URL <span class="required">*</span>
+              <span class="field-note">(Required)</span>
+            </label>
+            <input
+              type="url"
+              id="website"
+              name="website"
+              placeholder="https://yourbusiness.com"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="optional-fields">
+          <div class="field-group">
+            <div class="field-icon youtube-icon">▶</div>
+            <div class="field-content">
+              <label for="youtube">
+                YouTube Channel URL
+                <span class="field-note">(Optional)</span>
+              </label>
+              <input
+                type="url"
+                id="youtube"
+                name="youtube"
+                placeholder="https://youtube.com/@yourchannel"
+              />
+            </div>
+          </div>
+
+          <div class="field-group">
+            <div class="field-icon">↗</div>
+            <div class="field-content">
+              <label for="social">
+                Social / Profile URL
+                <span class="field-note">(Optional)</span>
+              </label>
+              <input
+                type="url"
+                id="social"
+                name="social"
+                placeholder="https://instagram.com/yourbusiness"
+              />
+              <small>
+                Instagram, Facebook, LinkedIn, TikTok, or another
+                supported public profile.
+              </small>
+            </div>
+          </div>
+        </div>
+
+        <div class="submit-area">
+          <button type="submit" id="analyze-button">
+            Analyze SEO + GEO <span>→</span>
+          </button>
+
+          <p class="privacy-note">
+            <span>♢</span>
+            No passwords or private account access. We analyze public
+            pages and supported data only.
+          </p>
+        </div>
+
+        <div id="form-message" class="form-message" role="status" aria-live="polite"></div>
+      </form>
+    </section>
+
+    <section class="checks-section">
+      <h2>What we check</h2>
+
+      <div class="checks-grid">
+        {checks.map((check) => (
+          <article class="check-card">
+            <div class="check-icon">{check.icon}</div>
+            <div>
+              <h3>{check.title}</h3>
+              <p>{check.description}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="steps-section">
+      {steps.map((step, index) => (
+        <div class="step-item">
+          <div class="step-number">{step.number}</div>
+          <div>
+            <h3>{step.title}</h3>
+            <p>{step.description}</p>
+          </div>
+          {index !== steps.length - 1 && (
+            <span class="step-arrow">→</span>
+          )}
+        </div>
+      ))}
+    </section>
+
+    <p class="bottom-note">
+      <span>ⓘ</span>
+      Your first results preview appears before we ask you to register or log in.
+    </p>
+  </main>
+
+  <footer class="site-footer">
+    <a href="/" class="footer-logo">
+      <span>I</span>llummedia
+    </a>
+    <p>Build visibility. Create opportunities. Collaborate and grow.</p>
+    <span>© {new Date().getFullYear()} Illummedia</span>
+  </footer>
+
+  <script>
+    const form = document.querySelector("#analyzer-form");
+    const message = document.querySelector("#form-message");
+    const button = document.querySelector("#analyze-button");
+
+    form?.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      if (!form.reportValidity()) return;
+
+      const website = document.querySelector("#website").value;
+      const youtube = document.querySelector("#youtube").value;
+      const social = document.querySelector("#social").value;
+
+      try {
+        [website, youtube, social].filter(Boolean).forEach((value) => {
+          const parsed = new URL(value);
+          if (!["http:", "https:"].includes(parsed.protocol)) {
+            throw new Error("Please use public HTTP or HTTPS links.");
+          }
+        });
+      } catch {
+        message.textContent = "Please enter valid public website and profile URLs.";
+        message.classList.add("visible");
+        return;
+      }
+
+      message.textContent =
+        "Your links have been collected. The live SEO + GEO analysis service still needs to be connected.";
+      message.classList.add("visible");
+
+      console.log("Business analysis request:", {
+        website,
+        youtube,
+        social
+      });
+    });
+  </script>
+</body>
+</html>
+
+<style>
+  :root {
+    --background: #191a12;
+    --surface: #191b1b;
+    --yellow: #ffdf00;
+    --text: #f1f0ed;
+    --muted: #b8b5ac;
+    --border: #48483e;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    background: var(--background);
+    color: var(--text);
+    font-family: Inter, Arial, sans-serif;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .site-header {
+    max-width: 1450px;
+    margin: auto;
+    padding: 22px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .logo,
+  .footer-logo {
+    font-size: 26px;
+    font-weight: 850;
+    letter-spacing: -1.5px;
+    white-space: nowrap;
+  }
+
+  .logo-illum,
+  .footer-logo span {
+    color: var(--yellow);
+  }
+
+  .main-nav {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+  }
+
+  .main-nav a {
+    font-size: 14px;
+    color: #e1dfd9;
+    padding: 12px 0;
+    position: relative;
+  }
+
+  .main-nav a.active::after {
+    content: "";
+    height: 3px;
+    background: var(--yellow);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .header-actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .login-button,
+  .signup-button {
+    padding: 13px 24px;
+    border-radius: 40px;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .login-button {
+    border: 1px solid #77756b;
+  }
+
+  .signup-button {
+    background: var(--yellow);
+    color: #171710;
+  }
+
+  main {
+    max-width: 1450px;
+    margin: auto;
+    padding: 25px 4%;
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    min-height: 295px;
+    gap: 35px;
+    padding: 10px 15px 35px;
+  }
+
+  .eyebrow {
+    color: var(--yellow);
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 2px;
+  }
+
+  .hero h1 {
+    font-size: clamp(38px, 4.2vw, 56px);
+    line-height: 1.08;
+    letter-spacing: -2px;
+    margin: 20px 0 18px;
+  }
+
+  .hero h1 span {
+    color: var(--yellow);
+  }
+
+  .hero-copy p {
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.65;
+    max-width: 700px;
+  }
+
+  .hero-visual {
+    position: relative;
+    height: 290px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .orbit {
+    position: absolute;
+    border: 1px solid rgba(255, 223, 0, 0.25);
+    border-radius: 50%;
+    aspect-ratio: 1;
+  }
+
+  .orbit-one {
+    width: 250px;
+  }
+
+  .orbit-two {
+    width: 205px;
+  }
+
+  .orbit-three {
+    width: 155px;
+  }
+
+  .business-symbol {
+    width: 105px;
+    height: 105px;
+    display: grid;
+    place-items: center;
+    background: #a68c00;
+    color: white;
+    border-radius: 26px;
+    font-size: 55px;
+    transform: rotate(-9deg);
+    box-shadow: 0 0 50px rgba(255, 223, 0, 0.15);
+    z-index: 1;
+  }
+
+  .floating-card {
+    position: absolute;
+    background: #202120;
+    border: 1px solid #777365;
+    border-radius: 15px;
+    padding: 12px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 12px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+  }
+
+  .floating-card strong {
+    color: var(--yellow);
+    font-size: 13px;
+  }
+
+  .seo-card {
+    top: 12px;
+    left: 0;
+  }
+
+  .geo-card {
+    top: 45px;
+    right: 0;
+  }
+
+  .growth-card {
+    bottom: 35px;
+    left: 0;
+  }
+
+  .insights-card {
+    bottom: 20px;
+    right: 0;
+  }
+
+  .analyzer {
+    margin-top: 10px;
+    padding: 28px 4%;
+    border: 1px solid #666458;
+    border-radius: 23px;
+    background: linear-gradient(130deg, #181a19, #1b1c1b);
+  }
+
+  .analyzer h2 {
+    font-size: clamp(27px, 3.5vw, 42px);
+    margin: 0 0 7px;
+    letter-spacing: -1px;
+  }
+
+  .analyzer h2 span {
+    color: var(--yellow);
+  }
+
+  .analyzer-intro {
+    color: var(--muted);
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+
+  .field-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    min-width: 0;
+  }
+
+  .website-field {
+    margin-bottom: 30px;
+  }
+
+  .field-icon,
+  .check-icon {
+    flex: 0 0 54px;
+    width: 54px;
+    height: 54px;
+    display: grid;
+    place-items: center;
+    border-radius: 13px;
+    background: #5b4c00;
+    color: white;
+    font-size: 27px;
+  }
+
+  .field-content {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .field-content label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: 700;
+    font-size: 15px;
+  }
+
+  .required,
+  .field-note {
+    color: var(--yellow);
+    margin-left: 5px;
+  }
+
+  .field-content input {
+    width: 100%;
+    height: 46px;
+    padding: 0 15px;
+    border: 1px solid #85847e;
+    border-radius: 14px;
+    background: #202222;
+    color: white;
+    font: inherit;
+    outline: none;
+  }
+
+  .field-content input:focus {
+    border-color: var(--yellow);
+    box-shadow: 0 0 0 2px rgba(255, 223, 0, 0.12);
+  }
+
+  .field-content input::placeholder {
+    color: #aaa9a3;
+  }
+
+  .optional-fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+  }
+
+  .field-content small {
+    display: block;
+    color: var(--muted);
+    margin-top: 8px;
+    line-height: 1.5;
+    font-size: 12px;
+  }
+
+  .submit-area {
+    text-align: center;
+    margin-top: 32px;
+  }
+
+  #analyze-button {
+    border: none;
+    background: var(--yellow);
+    color: #111;
+    font-size: 17px;
+    font-weight: 800;
+    padding: 14px 45px;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  #analyze-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 25px rgba(255, 223, 0, 0.2);
+  }
+
+  #analyze-button span {
+    margin-left: 10px;
+    font-size: 21px;
+  }
+
+  .privacy-note {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 18px;
+  }
+
+  .privacy-note span,
+  .bottom-note span {
+    color: var(--yellow);
+    font-size: 19px;
+    margin-right: 8px;
+  }
+
+  .form-message {
+    display: none;
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    color: var(--yellow);
+    text-align: center;
+    line-height: 1.5;
+  }
+
+  .form-message.visible {
+    display: block;
+  }
+
+  .checks-section {
+    padding: 28px 5px;
+  }
+
+  .checks-section > h2,
+  .steps-section h2 {
+    font-size: 30px;
+    margin: 0 0 18px;
+    letter-spacing: -1px;
+  }
+
+  .checks-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+
+  .check-card {
+    min-height: 145px;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+  }
+
+  .check-card h3 {
+    font-size: 17px;
+    margin: 7px 0 9px;
+  }
+
+  .check-card p {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--muted);
+    margin: 0;
+  }
+
+  .check-icon {
+    width: 48px;
+    height: 48px;
+    flex-basis: 48px;
+    font-size: 25px;
+  }
+
+  .steps-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 22px;
+    margin-top: 12px;
+    border: 1px solid #666458;
+    border-radius: 20px;
+    background: #20211d;
+  }
+
+  .step-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    position: relative;
+  }
+
+  .step-number {
+    width: 42px;
+    height: 42px;
+    flex: 0 0 42px;
+    display: grid;
+    place-items: center;
+    background: #a68c00;
+    border-radius: 50%;
+    font-size: 19px;
+    font-weight: 800;
+  }
+
+  .step-item h3 {
+    font-size: 15px;
+    margin: 5px 0 7px;
+  }
+
+  .step-item p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .step-arrow {
+    color: var(--yellow);
+    font-size: 30px;
+    position: absolute;
+    right: -8px;
+    top: 4px;
+  }
+
+  .bottom-note {
+    text-align: center;
+    color: var(--muted);
+    font-size: 14px;
+    font-style: italic;
+    margin: 22px 0 35px;
+  }
+
+  .site-footer {
+    border-top: 1px solid #36372f;
+    padding: 28px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    color: var(--muted);
+    font-size: 13px;
+  }
+
+  .footer-logo {
+    color: white;
+  }
+
+  @media (max-width: 900px) {
+    .site-header {
+      flex-wrap: wrap;
+    }
+
+    .main-nav {
+      order: 3;
+      width: 100%;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .hero {
+      grid-template-columns: 1fr 0.8fr;
+    }
+
+    .checks-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 650px) {
+    .site-header {
+      padding: 18px 5%;
+    }
+
+    .main-nav {
+      gap: 15px;
+    }
+
+    .main-nav a {
+      font-size: 12px;
+    }
+
+    .header-actions {
+      gap: 7px;
+    }
+
+    .login-button,
+    .signup-button {
+      padding: 10px 14px;
+      font-size: 12px;
+    }
+
+    main {
+      padding: 15px 4%;
+    }
+
+    .hero {
+      grid-template-columns: 1fr;
+      padding: 15px 5px;
+    }
+
+    .hero h1 {
+      font-size: 39px;
+    }
+
+    .hero-visual {
+      height: 230px;
+      max-width: 420px;
+      width: 100%;
+      margin: auto;
+    }
+
+    .analyzer {
+      padding: 22px 17px;
+    }
+
+    .optional-fields {
+      grid-template-columns: 1fr;
+      gap: 25px;
+    }
+
+    .field-group {
+      gap: 12px;
+    }
+
+    .field-icon {
+      width: 43px;
+      height: 43px;
+      flex-basis: 43px;
+      font-size: 22px;
+    }
+
+    .checks-grid,
+    .steps-section {
+      grid-template-columns: 1fr;
+    }
+
+    .step-arrow {
+      display: none;
+    }
+
+    .site-footer {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+</style>
+
