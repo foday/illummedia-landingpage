@@ -1,1 +1,969 @@
 
+---
+const experiences = [
+  {
+    icon: "▦",
+    title: "Illummedia Creator App",
+    recommended: true,
+    description:
+      "Get started quickly on the Illummedia creator platform and connect with your audience, businesses, and suppliers.",
+    features: [
+      "Your own creator channel",
+      "Publish videos, playlists, and updates",
+      "Audience notifications (push + email)",
+      "Announcements and events",
+      "Collaboration and brand opportunities"
+    ]
+  },
+  {
+    icon: "◇",
+    title: "Your Own Branded App",
+    recommended: false,
+    description:
+      "A dedicated, custom-branded app built for your channel, brand, or creator business.",
+    features: [
+      "Your brand, your app",
+      "Custom design and features",
+      "Your content, your audience",
+      "Push notifications and email",
+      "Scalable as you grow"
+    ]
+  }
+];
+
+const highlights = [
+  {
+    icon: "▣",
+    title: "Content management",
+    description: "Upload, organize, and showcase your videos and playlists."
+  },
+  {
+    icon: "♧",
+    title: "Audience reach",
+    description: "Keep your audience informed with push notifications and email updates."
+  },
+  {
+    icon: "♧",
+    title: "Business connections",
+    description: "Link with businesses and suppliers for sponsorships, products, and services."
+  },
+  {
+    icon: "▥",
+    title: "Growth insights",
+    description: "Track engagement and discover new opportunities for your content."
+  }
+];
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Grow your audience, manage your content, and create more opportunities with Illummedia's creator platform."
+  />
+  <title>Creator Platform | Illummedia</title>
+</head>
+
+<body>
+  <header class="site-header">
+    <a href="/" class="logo" aria-label="Illummedia home">
+      <span>I</span>llummedia
+    </a>
+
+    <nav class="main-nav">
+      <a href="/businesses/">Businesses</a>
+      <a href="/creators/" class="active">Creators</a>
+      <a href="/suppliers/">Suppliers</a>
+      <a href="/collaborators/">Collaborators</a>
+      <a href="/#portfolio">Portfolio</a>
+    </nav>
+
+    <div class="header-actions">
+      <a href="/login/" class="login-button">Log In</a>
+      <a href="/signup/" class="signup-button">Sign Up</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">CREATOR PLATFORM</span>
+
+        <h1>
+          Grow your audience.<br />
+          Manage your content.<br />
+          <span>Create more opportunities.</span>
+        </h1>
+
+        <p>
+          A creator-focused platform to share your work, notify your
+          audience, collaborate with businesses and suppliers, and turn
+          your content into bigger opportunities.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#experiences" class="primary-button">
+            Get started <span>→</span>
+          </a>
+          <a href="#platform-highlights" class="secondary-button">
+            <span class="play-icon">▶</span> See how it works
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-orbit orbit-one"></div>
+        <div class="hero-orbit orbit-two"></div>
+        <div class="hero-orbit orbit-three"></div>
+
+        <div class="phone">
+          <div class="phone-screen">
+            <div class="video-preview">
+              <div class="video-play">▶</div>
+            </div>
+
+            <div class="video-progress"></div>
+
+            <div class="video-row">
+              <div class="video-thumb thumb-one">▶</div>
+              <div class="video-lines"><i></i><i></i></div>
+            </div>
+
+            <div class="video-row">
+              <div class="video-thumb thumb-two">▶</div>
+              <div class="video-lines"><i></i><i></i></div>
+            </div>
+
+            <div class="video-row">
+              <div class="video-thumb thumb-three">▶</div>
+              <div class="video-lines"><i></i><i></i></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="floating-card notify-card">
+          <span class="floating-icon">♧</span>
+          <div><strong>Notify</strong><small>your audience</small></div>
+        </div>
+
+        <div class="floating-card manage-card">
+          <span class="floating-icon">▱</span>
+          <div><strong>Manage</strong><small>your content</small></div>
+        </div>
+
+        <div class="floating-card community-card">
+          <span class="floating-icon">♙</span>
+          <div><strong>Grow</strong><small>your community</small></div>
+        </div>
+
+        <div class="floating-card collaborate-card">
+          <span class="floating-icon">♧</span>
+          <div><strong>Collaborate</strong><small>& monetize</small></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CREATOR EXPERIENCES -->
+    <section class="experiences-section" id="experiences">
+      <div class="section-heading">
+        <h2>Choose your creator experience</h2>
+        <p>Two ways to build and engage your audience on Illummedia.</p>
+      </div>
+
+      <div class="experience-grid">
+        {experiences.map((experience) => (
+          <article class:list={["experience-card", experience.recommended && "featured"]}>
+            <div class="experience-heading">
+              <div class="experience-icon">{experience.icon}</div>
+              <h3>{experience.title}</h3>
+              {experience.recommended && (
+                <span class="recommended">Recommended</span>
+              )}
+            </div>
+
+            <p class="experience-description">{experience.description}</p>
+
+            <ul>
+              {experience.features.map((feature) => (
+                <li><span>✓</span>{feature}</li>
+              ))}
+            </ul>
+
+            {experience.recommended ? (
+              <div class="mini-app">
+                <div class="mini-app-dots">● ● ●</div>
+                <div class="mini-app-image">▶</div>
+                <div class="mini-app-row"><i></i><i></i></div>
+              </div>
+            ) : (
+              <div class="brand-phone">
+                <div class="brand-play">▶</div>
+                <strong>Your Brand</strong>
+                <span>App</span>
+              </div>
+            )}
+
+            <a
+              class="experience-link"
+              href="/signup/"
+            >
+              {experience.recommended ? "Get started" : "Request your branded app"}
+              <span>→</span>
+            </a>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <!-- PLATFORM HIGHLIGHTS -->
+    <section class="highlights-section" id="platform-highlights">
+      <h2>Platform highlights</h2>
+
+      <div class="highlights-grid">
+        {highlights.map((item) => (
+          <article class="highlight-card">
+            <div class="highlight-icon">{item.icon}</div>
+            <div>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <!-- CREATOR TYPES -->
+    <section class="creator-showcase">
+      <div class="creator-gallery">
+        <div class="creator-image music-image">
+          <span>▶</span>
+        </div>
+        <div class="creator-image singer-image">
+          <span>▶</span>
+        </div>
+        <div class="creator-image travel-image">
+          <span>▶</span>
+        </div>
+        <div class="creator-image education-image">
+          <span>▶</span>
+        </div>
+      </div>
+
+      <div class="showcase-copy">
+        <span class="eyebrow">FOR ALL TYPES OF CREATORS</span>
+        <h2>Built for every kind of creator.</h2>
+        <p>
+          YouTube creators, musicians, artists, educators,
+          filmmakers, and more.
+        </p>
+        <a href="/signup/" class="primary-button">
+          Start your creator journey <span>→</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a href="/" class="footer-logo"><span>I</span>llummedia</a>
+    <p>Build visibility. Create opportunities. Collaborate and grow.</p>
+    <span>© {new Date().getFullYear()} Illummedia</span>
+  </footer>
+</body>
+</html>
+
+<style>
+  :root {
+    --background: #191a12;
+    --surface: #191b1b;
+    --yellow: #ffdf00;
+    --text: #f1f0ed;
+    --muted: #b8b5ac;
+    --border: #48483e;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    background: var(--background);
+    color: var(--text);
+    font-family: Inter, Arial, sans-serif;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .site-header {
+    max-width: 1450px;
+    margin: auto;
+    padding: 20px 4.5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+  }
+
+  .logo,
+  .footer-logo {
+    font-size: 27px;
+    font-weight: 850;
+    letter-spacing: -1.5px;
+    white-space: nowrap;
+  }
+
+  .logo span,
+  .footer-logo span {
+    color: var(--yellow);
+  }
+
+  .main-nav {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+  }
+
+  .main-nav a {
+    position: relative;
+    padding: 12px 0;
+    color: #e5e3dd;
+    font-size: 14px;
+  }
+
+  .main-nav a.active::after {
+    content: "";
+    position: absolute;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--yellow);
+  }
+
+  .header-actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .login-button,
+  .signup-button {
+    border-radius: 40px;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .login-button {
+    border: 1px solid #77756b;
+  }
+
+  .signup-button,
+  .primary-button {
+    background: var(--yellow);
+    color: #15150f;
+  }
+
+  main {
+    max-width: 1450px;
+    margin: auto;
+    padding: 20px 4%;
+  }
+
+  .hero {
+    min-height: 340px;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 30px;
+    padding: 10px 5px 25px;
+  }
+
+  .eyebrow {
+    color: var(--yellow);
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 2px;
+  }
+
+  .hero h1 {
+    font-size: clamp(37px, 4vw, 51px);
+    line-height: 1.1;
+    letter-spacing: -2px;
+    margin: 16px 0;
+  }
+
+  .hero h1 span {
+    color: var(--yellow);
+  }
+
+  .hero-copy p {
+    max-width: 620px;
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 24px;
+  }
+
+  .primary-button,
+  .secondary-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    border-radius: 40px;
+    padding: 14px 23px;
+    font-size: 14px;
+    font-weight: 800;
+    transition: transform 0.2s;
+  }
+
+  .primary-button:hover,
+  .secondary-button:hover {
+    transform: translateY(-2px);
+  }
+
+  .secondary-button {
+    border: 1px solid #888477;
+  }
+
+  .play-icon {
+    color: var(--yellow);
+  }
+
+  .hero-visual {
+    height: 330px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-orbit {
+    position: absolute;
+    border: 1px solid rgba(255, 223, 0, 0.28);
+    border-radius: 50%;
+    aspect-ratio: 1;
+  }
+
+  .orbit-one { width: 310px; }
+  .orbit-two { width: 260px; }
+  .orbit-three { width: 210px; }
+
+  .phone {
+    position: relative;
+    z-index: 2;
+    width: 160px;
+    height: 285px;
+    padding: 8px;
+    background: #090a0b;
+    border: 3px solid #777d83;
+    border-radius: 29px;
+    transform: rotate(-7deg);
+    box-shadow: 0 20px 45px #0009;
+  }
+
+  .phone-screen {
+    height: 100%;
+    padding: 9px;
+    background: #16181d;
+    border-radius: 19px;
+    overflow: hidden;
+  }
+
+  .video-preview {
+    height: 95px;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    background:
+      linear-gradient(0deg, #0008, transparent),
+      linear-gradient(135deg, #e7a36b, #56446d 55%, #111827);
+  }
+
+  .video-play {
+    width: 36px;
+    height: 36px;
+    border: 2px solid white;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 14px;
+  }
+
+  .video-progress {
+    height: 4px;
+    background: linear-gradient(90deg, var(--yellow) 45%, #777 45%);
+    margin: 10px 0;
+    border-radius: 5px;
+  }
+
+  .video-row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .video-thumb {
+    width: 43px;
+    height: 34px;
+    display: grid;
+    place-items: center;
+    border-radius: 6px;
+    color: white;
+    font-size: 12px;
+  }
+
+  .thumb-one { background: #8a6b9b; }
+  .thumb-two { background: #a26e80; }
+  .thumb-three { background: #596d84; }
+
+  .video-lines {
+    flex: 1;
+  }
+
+  .video-lines i {
+    display: block;
+    height: 6px;
+    background: #55575e;
+    border-radius: 4px;
+    margin: 6px 0;
+  }
+
+  .floating-card {
+    position: absolute;
+    z-index: 3;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 12px;
+    border: 1px solid #7d7658;
+    background: #1b1d1d;
+    border-radius: 14px;
+    font-size: 12px;
+    box-shadow: 0 12px 30px #0005;
+  }
+
+  .floating-card strong,
+  .floating-card small {
+    display: block;
+  }
+
+  .floating-card strong { color: white; }
+  .floating-card small { color: var(--muted); margin-top: 3px; }
+
+  .floating-icon {
+    color: var(--yellow);
+    font-size: 24px;
+  }
+
+  .notify-card { top: 42px; left: 0; }
+  .manage-card { top: 60px; right: 0; }
+  .community-card { bottom: 90px; left: -5px; }
+  .collaborate-card { bottom: 55px; right: -5px; }
+
+  .experiences-section {
+    margin-top: 5px;
+  }
+
+  .section-heading h2,
+  .highlights-section > h2 {
+    font-size: 30px;
+    letter-spacing: -1px;
+    margin: 0 0 8px;
+  }
+
+  .section-heading p {
+    color: var(--muted);
+    margin: 0 0 20px;
+  }
+
+  .experience-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+  }
+
+  .experience-card {
+    min-height: 285px;
+    position: relative;
+    overflow: hidden;
+    padding: 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+  }
+
+  .experience-card.featured {
+    border: 2px solid var(--yellow);
+  }
+
+  .experience-heading {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .experience-icon,
+  .highlight-icon {
+    width: 42px;
+    height: 42px;
+    flex: 0 0 42px;
+    display: grid;
+    place-items: center;
+    border-radius: 11px;
+    background: #594b00;
+    color: white;
+    font-size: 23px;
+  }
+
+  .experience-heading h3 {
+    font-size: 21px;
+    margin: 0;
+    letter-spacing: -0.6px;
+  }
+
+  .recommended {
+    color: #111;
+    background: var(--yellow);
+    border-radius: 30px;
+    padding: 5px 12px;
+    font-size: 11px;
+    font-weight: 800;
+  }
+
+  .experience-description {
+    max-width: 90%;
+    font-size: 14px;
+    line-height: 1.55;
+    color: #dddcd6;
+  }
+
+  .experience-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 18px 0;
+  }
+
+  .experience-card li {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin: 10px 0;
+    font-size: 14px;
+  }
+
+  .experience-card li span {
+    color: var(--yellow);
+    font-size: 22px;
+    font-weight: 900;
+  }
+
+  .mini-app {
+    position: absolute;
+    width: 150px;
+    height: 170px;
+    bottom: -50px;
+    right: 12px;
+    border: 2px solid #696b70;
+    border-radius: 20px;
+    background: #111318;
+    padding: 12px;
+    opacity: 0.9;
+  }
+
+  .mini-app-dots {
+    color: #777;
+    font-size: 10px;
+  }
+
+  .mini-app-image {
+    height: 72px;
+    margin-top: 12px;
+    display: grid;
+    place-items: center;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #e6a06d, #555070);
+  }
+
+  .mini-app-row {
+    display: flex;
+    gap: 7px;
+    margin-top: 8px;
+  }
+
+  .mini-app-row i {
+    height: 24px;
+    flex: 1;
+    background: #685b8a;
+    border-radius: 6px;
+  }
+
+  .brand-phone {
+    position: absolute;
+    right: 22px;
+    bottom: -35px;
+    width: 120px;
+    height: 185px;
+    border: 3px solid #767c82;
+    border-radius: 20px;
+    background: #08090b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(8deg);
+    box-shadow: 0 10px 30px #0007;
+  }
+
+  .brand-play {
+    width: 48px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    color: #111;
+    background: var(--yellow);
+    border-radius: 10px;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .brand-phone strong,
+  .brand-phone span {
+    font-size: 12px;
+  }
+
+  .experience-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 12px;
+    color: var(--yellow);
+    font-size: 13px;
+    font-weight: 800;
+    position: relative;
+    z-index: 2;
+  }
+
+  .highlights-section {
+    margin-top: 28px;
+  }
+
+  .highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-top: 15px;
+  }
+
+  .highlight-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+    min-height: 120px;
+    padding: 16px;
+    background: #1b1d1c;
+    border: 1px solid #3b3c33;
+    border-radius: 17px;
+  }
+
+  .highlight-icon {
+    width: 38px;
+    height: 38px;
+    flex-basis: 38px;
+    font-size: 20px;
+  }
+
+  .highlight-card h3 {
+    font-size: 14px;
+    margin: 6px 0 8px;
+  }
+
+  .highlight-card p {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .creator-showcase {
+    margin: 35px -10px 10px;
+    padding: 25px;
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    align-items: center;
+    gap: 35px;
+    border: 1px solid #b19a00;
+    border-radius: 22px;
+    background: linear-gradient(120deg, #171914, #252318);
+  }
+
+  .creator-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 9px;
+  }
+
+  .creator-image {
+    min-height: 85px;
+    display: grid;
+    place-items: center;
+    border: 2px solid #b39b00;
+    border-radius: 11px;
+    background: linear-gradient(135deg, #524338, #17191d 60%, #80614a);
+  }
+
+  .creator-image span {
+    width: 30px;
+    height: 30px;
+    display: grid;
+    place-items: center;
+    border: 1px solid white;
+    border-radius: 50%;
+    color: white;
+    font-size: 11px;
+  }
+
+  .singer-image { background: linear-gradient(135deg, #a36a55, #35202a); }
+  .travel-image { background: linear-gradient(135deg, #8caa9a, #304b5c); }
+  .education-image {
+    grid-column: 1 / 3;
+    width: 65%;
+    margin-left: 30%;
+    background: linear-gradient(135deg, #887866, #303b43);
+  }
+
+  .showcase-copy h2 {
+    font-size: 30px;
+    letter-spacing: -1px;
+    margin: 8px 0;
+  }
+
+  .showcase-copy p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .showcase-copy .primary-button {
+    margin-top: 12px;
+  }
+
+  .site-footer {
+    border-top: 1px solid #36372f;
+    padding: 28px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    color: var(--muted);
+    font-size: 13px;
+  }
+
+  .footer-logo {
+    color: white;
+  }
+
+  @media (max-width: 950px) {
+    .site-header {
+      flex-wrap: wrap;
+    }
+
+    .main-nav {
+      order: 3;
+      width: 100%;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .highlights-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .experience-card {
+      min-height: 330px;
+    }
+  }
+
+  @media (max-width: 650px) {
+    .site-header {
+      padding: 17px 5%;
+    }
+
+    .main-nav {
+      gap: 14px;
+    }
+
+    .main-nav a {
+      font-size: 12px;
+    }
+
+    .login-button,
+    .signup-button {
+      padding: 10px 14px;
+      font-size: 12px;
+    }
+
+    main {
+      padding: 15px 4%;
+    }
+
+    .hero {
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+
+    .hero h1 {
+      font-size: 37px;
+    }
+
+    .hero-visual {
+      height: 290px;
+      max-width: 430px;
+      width: 100%;
+      margin: auto;
+    }
+
+    .experience-grid,
+    .highlights-grid,
+    .creator-showcase {
+      grid-template-columns: 1fr;
+    }
+
+    .experience-card {
+      min-height: 320px;
+    }
+
+    .creator-showcase {
+      margin-left: 0;
+      margin-right: 0;
+      padding: 20px;
+    }
+
+    .site-footer {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+</style>
+
