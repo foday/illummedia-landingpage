@@ -1,1 +1,1012 @@
 
+---
+const categories = [
+  {
+    icon: "⬡",
+    title: "Industrial & MRO",
+    image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600"
+  },
+  {
+    icon: "▣",
+    title: "Materials & Supplies",
+    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600"
+  },
+  {
+    icon: "⚙",
+    title: "Parts & Components",
+    image: "https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=600"
+  },
+  {
+    icon: "♧",
+    title: "Safety & PPE",
+    image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600"
+  },
+  {
+    icon: "▰",
+    title: "Logistics & Services",
+    image: "https://images.unsplash.com/photo-1586528116493-a029325540fa?w=600"
+  },
+  {
+    icon: "▱",
+    title: "Technology & Tools",
+    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600"
+  }
+];
+
+const benefits = [
+  "Showcase your offerings to businesses and creators",
+  "Receive inquiries and partnership opportunities",
+  "Highlight your capabilities and certifications",
+  "Build long-term collaboration opportunities",
+  "Gain insights on profile views and engagement"
+];
+
+const steps = [
+  {
+    number: "1",
+    icon: "▥",
+    title: "Create your profile",
+    description: "Add your company, products, services, and capabilities."
+  },
+  {
+    number: "2",
+    icon: "⌕",
+    title: "Get discovered",
+    description: "Be found by businesses, creators, and collaborators."
+  },
+  {
+    number: "3",
+    icon: "♧",
+    title: "Build opportunities",
+    description: "Connect, collaborate, and grow your business."
+  }
+];
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Join the Illummedia supplier network. Showcase products, services, and capabilities and connect with businesses, creators, and collaborators."
+  />
+  <title>Supplier Network | Illummedia</title>
+</head>
+
+<body>
+  <!-- NAVIGATION -->
+  <header class="site-header">
+    <a href="/" class="logo" aria-label="Illummedia home">
+      <span>I</span>llummedia
+    </a>
+
+    <nav class="main-nav">
+      <a href="/">Home</a>
+      <a href="/creators/">Creators</a>
+      <a href="/businesses/">Businesses</a>
+      <a href="/suppliers/" class="active">Suppliers</a>
+      <a href="/collaborators/">Collaborators</a>
+      <a href="/#portfolio">Portfolio</a>
+    </nav>
+
+    <div class="header-actions">
+      <a href="/login/" class="login-button">Log In</a>
+      <a href="/signup/" class="signup-button">
+        Join early access <span>↗</span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">SUPPLIER NETWORK</span>
+
+        <h1>
+          Get discovered by<br />
+          businesses, creators,<br />
+          <span>and collaborators.</span>
+        </h1>
+
+        <p>
+          Showcase your products, services, and capabilities, connect
+          with qualified opportunities, and grow your business within
+          the Illummedia ecosystem.
+        </p>
+
+        <div class="hero-actions">
+          <a href="/signup/?role=supplier" class="primary-button">
+            Create your supplier profile <span>↗</span>
+          </a>
+
+          <a href="#how-it-works" class="secondary-button">
+            <span class="play-icon">▶</span>
+            See how it works
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-photo"></div>
+        <div class="photo-shade"></div>
+
+        <div class="hero-orbit orbit-one"></div>
+        <div class="hero-orbit orbit-two"></div>
+        <div class="hero-orbit orbit-three"></div>
+
+        <div class="floating-card showcase-card">
+          <span class="floating-icon">⬡</span>
+          <strong>Showcase<br />products</strong>
+        </div>
+
+        <div class="floating-card capability-card">
+          <span class="floating-icon">⚙</span>
+          <strong>Highlight<br />capabilities</strong>
+        </div>
+
+        <div class="floating-card connection-card">
+          <span class="floating-icon">♧</span>
+          <strong>Connect with<br />buyers & creators</strong>
+        </div>
+
+        <div class="floating-card growth-card">
+          <span class="floating-icon">▥</span>
+          <strong>Grow<br />opportunities</strong>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT YOU CAN SHOWCASE -->
+    <section class="categories-section">
+      <div class="section-heading">
+        <span class="eyebrow">WHAT YOU CAN SHOWCASE</span>
+        <h2>Present what you supply.</h2>
+        <p>
+          List your products, services, and capabilities so the right
+          people can find and work with you.
+        </p>
+      </div>
+
+      <div class="categories-grid">
+        {categories.map((category) => (
+          <article class="category-card">
+            <div
+              class="category-image"
+              style={`background-image: url("${category.image}")`}
+            ></div>
+            <div class="category-label">
+              <span>{category.icon}</span>
+              <strong>{category.title}</strong>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <!-- SUPPLIER BENEFITS -->
+    <section class="benefits-section">
+      <div class="benefits-copy">
+        <span class="eyebrow">WHY JOIN AS A SUPPLIER</span>
+
+        <h2>
+          More visibility. More<br />
+          connections. <span>More business.</span>
+        </h2>
+
+        <ul>
+          {benefits.map((benefit) => (
+            <li>
+              <span>✓</span>
+              {benefit}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="profile-preview">
+        <div class="preview-heading">
+          <span>◉</span> Supplier Profile Preview
+        </div>
+
+        <article class="supplier-profile">
+          <div class="profile-image"></div>
+
+          <div class="profile-details">
+            <h3>ASG Industrial Supply</h3>
+            <p>Conveyor parts, MRO, and maintenance supplies.</p>
+
+            <div class="profile-tags">
+              <span>Parts</span>
+              <span>MRO</span>
+              <span>Maintenance</span>
+            </div>
+          </div>
+        </article>
+
+        <p class="preview-note">
+          Example supplier profile — replace with actual supplier information.
+        </p>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="how-section" id="how-it-works">
+      <div class="section-heading">
+        <span class="eyebrow">HOW IT WORKS</span>
+        <h2>Get started in three simple steps.</h2>
+      </div>
+
+      <div class="steps-grid">
+        {steps.map((step, index) => (
+          <>
+            <article class="step-card">
+              <span class="step-number">{step.number}</span>
+              <span class="step-icon">{step.icon}</span>
+
+              <div>
+                <h3>{step.title}</h3>
+                <p>{step.description}</p>
+              </div>
+            </article>
+
+            {index !== steps.length - 1 && (
+              <span class="step-arrow">→</span>
+            )}
+          </>
+        ))}
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta">
+      <div class="cta-photo"></div>
+      <div class="cta-content">
+        <h2>Ready to <span>grow your supply business?</span></h2>
+        <p>
+          Join Illummedia and put your products, services, and expertise
+          in front of the right audience.
+        </p>
+
+        <div class="cta-actions">
+          <a href="/signup/?role=supplier" class="primary-button">
+            Create your supplier profile <span>↗</span>
+          </a>
+
+          <a href="#how-it-works" class="secondary-button">
+            <span class="play-icon">▶</span> Watch overview
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a href="/" class="footer-logo"><span>I</span>llummedia</a>
+    <p>Build visibility. Create opportunities. Collaborate and grow.</p>
+    <span>© {new Date().getFullYear()} Illummedia</span>
+  </footer>
+</body>
+</html>
+
+<style>
+  :root {
+    --background: #191a12;
+    --surface: #191b1b;
+    --yellow: #ffdf00;
+    --text: #f1f0ed;
+    --muted: #b8b5ac;
+    --border: #48483e;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    background: var(--background);
+    color: var(--text);
+    font-family: Inter, Arial, sans-serif;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .site-header {
+    max-width: 1500px;
+    margin: auto;
+    padding: 18px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 22px;
+  }
+
+  .logo,
+  .footer-logo {
+    font-size: 27px;
+    font-weight: 850;
+    letter-spacing: -1.5px;
+    white-space: nowrap;
+  }
+
+  .logo span,
+  .footer-logo span {
+    color: var(--yellow);
+  }
+
+  .main-nav {
+    display: flex;
+    align-items: center;
+    gap: 29px;
+  }
+
+  .main-nav a {
+    position: relative;
+    padding: 12px 0;
+    font-size: 13px;
+    color: #e5e3dd;
+    white-space: nowrap;
+  }
+
+  .main-nav a.active::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--yellow);
+  }
+
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .login-button,
+  .signup-button {
+    border-radius: 40px;
+    padding: 12px 21px;
+    font-size: 13px;
+    font-weight: 800;
+    white-space: nowrap;
+  }
+
+  .login-button {
+    border: 1px solid #77756b;
+  }
+
+  .signup-button,
+  .primary-button {
+    background: var(--yellow);
+    color: #15150f;
+  }
+
+  main {
+    max-width: 1500px;
+    margin: auto;
+  }
+
+  .hero {
+    min-height: 340px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .hero-copy {
+    padding: 25px 5.5%;
+    position: relative;
+    z-index: 2;
+  }
+
+  .eyebrow {
+    display: inline-block;
+    color: var(--yellow);
+    font-size: 12px;
+    font-weight: 850;
+    letter-spacing: 1.8px;
+  }
+
+  .hero h1 {
+    font-size: clamp(36px, 4vw, 49px);
+    line-height: 1.08;
+    letter-spacing: -1.8px;
+    margin: 12px 0;
+  }
+
+  .hero h1 span,
+  .benefits-copy h2 span,
+  .final-cta h2 span {
+    color: var(--yellow);
+  }
+
+  .hero-copy p {
+    max-width: 510px;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  .hero-actions,
+  .cta-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 13px;
+    margin-top: 19px;
+  }
+
+  .primary-button,
+  .secondary-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 40px;
+    padding: 13px 21px;
+    font-size: 12px;
+    font-weight: 850;
+    transition: transform .2s;
+  }
+
+  .primary-button:hover,
+  .secondary-button:hover {
+    transform: translateY(-2px);
+  }
+
+  .secondary-button {
+    border: 1px solid #827d70;
+    color: white;
+  }
+
+  .play-icon {
+    color: var(--yellow);
+  }
+
+  /* HERO VISUAL */
+
+  .hero-visual {
+    min-height: 340px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-photo,
+  .photo-shade {
+    position: absolute;
+    inset: 0;
+  }
+
+  .hero-photo {
+    background-image: url("https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=1200");
+    background-size: cover;
+    background-position: center;
+    opacity: .8;
+  }
+
+  .photo-shade {
+    background: linear-gradient(
+      90deg,
+      var(--background) 0%,
+      rgba(25,26,18,.35) 30%,
+      rgba(25,26,18,.1) 100%
+    );
+  }
+
+  .hero-orbit {
+    position: absolute;
+    z-index: 1;
+    border: 1px solid rgba(255,223,0,.32);
+    border-radius: 50%;
+    aspect-ratio: 1;
+  }
+
+  .orbit-one { width: 270px; right: 7%; }
+  .orbit-two { width: 220px; right: 11%; }
+  .orbit-three { width: 170px; right: 15%; }
+
+  .floating-card {
+    position: absolute;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 180px;
+    padding: 11px 14px;
+    background: rgba(18,20,18,.91);
+    border: 1px solid #6d6752;
+    border-radius: 17px;
+    box-shadow: 0 10px 30px #0006;
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  .floating-icon {
+    color: var(--yellow);
+    font-size: 25px;
+  }
+
+  .showcase-card {
+    top: 30px;
+    left: 7%;
+  }
+
+  .capability-card {
+    top: 100px;
+    left: 10%;
+  }
+
+  .connection-card {
+    top: 170px;
+    left: 5%;
+  }
+
+  .growth-card {
+    top: 240px;
+    left: 10%;
+  }
+
+  /* CATEGORIES */
+
+  .categories-section {
+    padding: 14px 4.5% 24px;
+    border-top: 1px solid #33342a;
+    border-bottom: 1px solid #33342a;
+  }
+
+  .section-heading h2 {
+    font-size: 29px;
+    letter-spacing: -1px;
+    margin: 5px 0;
+  }
+
+  .section-heading p {
+    color: var(--muted);
+    font-size: 14px;
+    margin: 6px 0 18px;
+  }
+
+  .categories-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 13px;
+  }
+
+  .category-card {
+    position: relative;
+    min-width: 0;
+    height: 138px;
+    overflow: hidden;
+    border: 1px solid #4b4a40;
+    border-radius: 14px;
+    background: #25251d;
+  }
+
+  .category-image {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transition: transform .3s;
+  }
+
+  .category-card:hover .category-image {
+    transform: scale(1.06);
+  }
+
+  .category-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      transparent 25%,
+      rgba(0,0,0,.85) 100%
+    );
+  }
+
+  .category-label {
+    position: absolute;
+    z-index: 2;
+    bottom: 12px;
+    left: 12px;
+    right: 8px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 11px;
+  }
+
+  .category-label span {
+    color: var(--yellow);
+    font-size: 20px;
+  }
+
+  /* BENEFITS */
+
+  .benefits-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+    padding: 25px 6%;
+    border-bottom: 1px solid #33342a;
+  }
+
+  .benefits-copy {
+    border-right: 1px solid #595649;
+    padding-right: 30px;
+  }
+
+  .benefits-copy h2 {
+    font-size: 32px;
+    line-height: 1.08;
+    letter-spacing: -1px;
+    margin: 6px 0 12px;
+  }
+
+  .benefits-copy ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .benefits-copy li {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin: 9px 0;
+    font-size: 13px;
+    color: #e0dfd8;
+  }
+
+  .benefits-copy li span {
+    color: var(--yellow);
+    font-size: 19px;
+    font-weight: 900;
+  }
+
+  .profile-preview {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px 0;
+  }
+
+  .preview-heading {
+    margin-bottom: 12px;
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  .preview-heading span {
+    color: var(--yellow);
+    margin-right: 8px;
+  }
+
+  .supplier-profile {
+    display: flex;
+    gap: 17px;
+    align-items: center;
+    padding: 13px;
+    border: 1px solid var(--yellow);
+    border-radius: 18px;
+    background: #191b1b;
+  }
+
+  .profile-image {
+    width: 125px;
+    height: 105px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    background:
+      url("https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=500")
+      center / cover;
+  }
+
+  .profile-details h3 {
+    margin: 0 0 6px;
+    font-size: 17px;
+  }
+
+  .profile-details p {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.4;
+    margin: 0 0 10px;
+  }
+
+  .profile-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .profile-tags span {
+    padding: 6px 10px;
+    border: 1px solid #756400;
+    border-radius: 20px;
+    color: var(--yellow);
+    font-size: 10px;
+  }
+
+  .preview-note {
+    color: #88877d;
+    font-size: 10px;
+    margin: 8px 0 0;
+  }
+
+  /* STEPS */
+
+  .how-section {
+    padding: 22px 5.5% 28px;
+  }
+
+  .steps-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr auto 1fr;
+    gap: 15px;
+    align-items: center;
+    margin-top: 16px;
+  }
+
+  .step-card {
+    min-height: 105px;
+    padding: 13px;
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+    background: #1c1e1a;
+    border: 1px solid #716a4f;
+    border-radius: 16px;
+  }
+
+  .step-number {
+    width: 35px;
+    height: 35px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    background: var(--yellow);
+    color: #15150f;
+    border-radius: 50%;
+    font-weight: 900;
+  }
+
+  .step-icon {
+    color: var(--yellow);
+    font-size: 28px;
+  }
+
+  .step-card h3 {
+    font-size: 13px;
+    margin: 4px 0 6px;
+  }
+
+  .step-card p {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.45;
+    margin: 0;
+  }
+
+  .step-arrow {
+    color: var(--yellow);
+    font-size: 30px;
+    font-weight: 700;
+  }
+
+  /* FINAL CTA */
+
+  .final-cta {
+    position: relative;
+    overflow: hidden;
+    min-height: 145px;
+    margin: 0 3.5% 28px;
+    padding: 22px 35px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #a99000;
+    border-radius: 22px;
+    background: #171912;
+  }
+
+  .cta-photo {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(90deg, #171912 0%, rgba(23,25,18,.96) 40%, rgba(23,25,18,.2) 100%),
+      url("https://images.unsplash.com/photo-1494412519320-aa613dfb7738?w=1200")
+      center / cover;
+    opacity: .85;
+  }
+
+  .cta-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+  }
+
+  .final-cta h2 {
+    font-size: 30px;
+    letter-spacing: -1px;
+    margin: 0 0 7px;
+  }
+
+  .final-cta p {
+    color: #dedbd2;
+    font-size: 13px;
+    margin: 0;
+  }
+
+  .cta-actions {
+    margin-top: 15px;
+  }
+
+  /* FOOTER */
+
+  .site-footer {
+    border-top: 1px solid #36372f;
+    padding: 25px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    color: var(--muted);
+    font-size: 12px;
+  }
+
+  .footer-logo {
+    color: white;
+  }
+
+  /* TABLET */
+
+  @media (max-width: 1050px) {
+    .site-header {
+      flex-wrap: wrap;
+    }
+
+    .main-nav {
+      order: 3;
+      width: 100%;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 22px;
+    }
+
+    .categories-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .hero h1 {
+      font-size: 38px;
+    }
+  }
+
+  /* MOBILE */
+
+  @media (max-width: 650px) {
+    .site-header {
+      padding: 16px 5%;
+    }
+
+    .logo {
+      font-size: 23px;
+    }
+
+    .main-nav {
+      gap: 13px;
+    }
+
+    .main-nav a {
+      font-size: 11px;
+    }
+
+    .header-actions {
+      gap: 7px;
+    }
+
+    .login-button,
+    .signup-button {
+      padding: 10px 12px;
+      font-size: 11px;
+    }
+
+    .hero {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-copy {
+      padding: 25px 6%;
+    }
+
+    .hero h1 {
+      font-size: 38px;
+    }
+
+    .hero-visual {
+      min-height: 310px;
+    }
+
+    .categories-section {
+      padding: 22px 5%;
+    }
+
+    .categories-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .category-card {
+      height: 130px;
+    }
+
+    .benefits-section {
+      grid-template-columns: 1fr;
+      gap: 20px;
+      padding: 25px 6%;
+    }
+
+    .benefits-copy {
+      border-right: 0;
+      border-bottom: 1px solid #595649;
+      padding: 0 0 20px;
+    }
+
+    .benefits-copy h2 {
+      font-size: 29px;
+    }
+
+    .supplier-profile {
+      gap: 12px;
+    }
+
+    .profile-image {
+      width: 95px;
+      height: 95px;
+    }
+
+    .profile-details h3 {
+      font-size: 14px;
+    }
+
+    .steps-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .step-arrow {
+      text-align: center;
+      transform: rotate(90deg);
+    }
+
+    .final-cta {
+      margin: 0 4% 25px;
+      padding: 22px;
+    }
+
+    .final-cta h2 {
+      font-size: 25px;
+    }
+
+    .site-footer {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+</style>
+
