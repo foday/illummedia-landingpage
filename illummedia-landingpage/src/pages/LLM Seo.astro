@@ -47,18 +47,18 @@ const steps = [
 </head>
 
 <body>
-  <header class="site-header">
+  <header class="site-header sticky-header">
     <a href="/" class="logo" aria-label="Illummedia home">
       <span class="logo-illum">I</span>llummedia
     </a>
 
-    <nav class="main-nav">
+    <nav class="main-nav ">
       <a href="/">Home</a>
-      <a href="/businesses/" class="active">Businesses</a>
-      <a href="/creators/">Creators</a>
-      <a href="/suppliers/">Suppliers</a>
+      <a href="/LLM Seo/" class="active">LLM Seo Marketing</a>
+      <a href="/creators/">Admin</a>
+      <!-- <a href="/suppliers/">Suppliers</a>
       <a href="/collaborators/">Collaborators</a>
-      <a href="/#portfolio">Portfolio</a>
+      <a href="/#portfolio">Portfolio</a> -->
     </nav>
 
     <div class="header-actions">
@@ -279,6 +279,15 @@ const steps = [
 </html>
 
 <style>
+
+  .sticky-header{
+    position:sticky;
+    top:0;z-index:999;
+    background-color: #191a12;
+    /* background:var(--paper); */
+    box-shadow:0 1px 4px #00000012
+  }
+
   :root {
     --background: #191a12;
     --surface: #191b1b;
